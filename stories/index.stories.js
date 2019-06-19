@@ -26,7 +26,7 @@ const RomajiForm = () => {
 };
 
 storiesOf('RomajiInput', module)
-  .add('default', () => (
+  .add('default uncontrolled', () => (
     <RomajiInput onChange={e => console.log(e.target.value)} />
   ))
   .add('with initial value', () => (
@@ -35,4 +35,4 @@ storiesOf('RomajiInput', module)
       onChange={e => console.log(e.target.value)}
     />
   ))
-  .add('in form', () => <RomajiForm />);
+  .add('controlled in form', () => <RomajiForm />);
