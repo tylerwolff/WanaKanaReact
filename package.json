@@ -41,5 +41,7 @@
   "license": "MIT",
   "repository": "github:tylerwolff/WanaKanaReact",
   "homepage": "https://github.com/tylerwolff/WanaKanaReact",
-  "dependencies": {}
+  "dependencies": {
+    "wanakana": "^4.0.2"
+  }
 }
