@@ -1,0 +1,36 @@
+{
+  "name": "WanaKanaReact",
+  "version": "0.0.1",
+  "description": "A React wrapper for WanaKana.js",
+  "keywords": [
+    "react",
+    "wanakana",
+    "hiragana",
+    "katakana"
+  ],
+  "engines": {
+    "node": ">=8"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel index.js -d dist",
+    "prepublishOnly": "npm run build",
+    "test": "jest"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0"
+  },
+  "devDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
+  },
+  "author": "Tyler Wolff <tylerwolff@gmail.com> (https://github.com/tylerwolff)",
+  "license": "MIT",
+  "repository": "github:tylerwolff/WanaKanaReact",
+  "homepage": "https://github.com/tylerwolff/WanaKanaReact"
+}
