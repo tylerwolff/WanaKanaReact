@@ -15,12 +15,20 @@
   "scripts": {
     "build": "babel index.js -d dist",
     "prepublishOnly": "npm run build",
-    "test": "jest"
+    "test": "jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "peerDependencies": {
     "react": "^16.8.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@storybook/addon-actions": "^5.1.8",
+    "@storybook/addon-links": "^5.1.8",
+    "@storybook/addons": "^5.1.8",
+    "@storybook/react": "^5.1.8",
+    "babel-loader": "^8.0.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
@@ -32,5 +40,6 @@
   "author": "Tyler Wolff <tylerwolff@gmail.com> (https://github.com/tylerwolff)",
   "license": "MIT",
   "repository": "github:tylerwolff/WanaKanaReact",
-  "homepage": "https://github.com/tylerwolff/WanaKanaReact"
+  "homepage": "https://github.com/tylerwolff/WanaKanaReact",
+  "dependencies": {}
 }
