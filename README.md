@@ -1,5 +1,7 @@
 # WanaKanaReact
 
+[![npm package][npm-badge]][npm]
+
 React wrapper for WanaKana.js
 
 ## Currently available
@@ -41,3 +43,6 @@ const RomajiForm = () => {
 ## To develop in storybook
 
 `npm run storybook`
+
+[npm-badge]: https://img.shields.io/npm/v/react-wanakana.svg
+[npm]: https://www.npmjs.org/package/react-wanakana
