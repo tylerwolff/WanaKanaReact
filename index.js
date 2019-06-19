@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { toKana } from 'wanakana';
 
 // Need IMEMode option to handle single kana characters like ん and い
@@ -6,19 +6,29 @@ function romajiToKana(string) {
   return toKana(string, { IMEMode: true });
 }
 
-const RomajiInput = ({ initialValue, onChange, ...props }) => {
-  const [value, setValue] = useState(romajiToKana(initialValue));
+const RomajiInput = ({ value, onChange, ...props }) => {
+  const inputRef = useRef(null);
+  const [parsedValue, setValue] = useState(romajiToKana(value));
   const handleChange = e => {
-    setValue(romajiToKana(e.target.value));
+    const kana = romajiToKana(e.target.value);
+    setValue(kana);
+    inputRef.current.value = kana;
     onChange(e);
   };
 
-  return <input {...props} value={value} onChange={handleChange} />;
+  return (
+    <input
+      ref={inputRef}
+      value={parsedValue}
+      onChange={handleChange}
+      {...props}
+    />
+  );
 };
 
 RomajiInput.defaultProps = {
   type: 'text',
-  initialValue: '',
+  value: '',
   onChange: e => e,
 };
 

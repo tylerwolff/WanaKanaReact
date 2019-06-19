@@ -9,7 +9,7 @@ import RomajiInput from '../index';
 const RomajiForm = () => {
   const [greeting, setGreeting] = useState('こんにちわ');
   const handleChange = e => {
-    console.log(e.target.value);
+    setGreeting(e.target.value);
   };
 
   return (
@@ -19,11 +19,7 @@ const RomajiForm = () => {
         alert(greeting);
       }}
     >
-      <RomajiInput
-        name="greeting"
-        initialValue="konnichiwa"
-        onChange={handleChange}
-      />
+      <RomajiInput name="greeting" value={greeting} onChange={handleChange} />
       <button type="submit">Submit</button>
     </form>
   );
@@ -35,7 +31,7 @@ storiesOf('RomajiInput', module)
   ))
   .add('with initial value', () => (
     <RomajiInput
-      initialValue="konnichiwa"
+      value="konnnichiwa"
       onChange={e => console.log(e.target.value)}
     />
   ))
