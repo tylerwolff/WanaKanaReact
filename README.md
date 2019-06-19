@@ -2,6 +2,15 @@
 
 React wrapper for WanaKana.js
 
+## Currently available
+`RomajiInput` - uses `toKana` behind the scenes to update an input's value from romaji to hiragana/katakana
+
+## To do
+- [ ] Add ability to use a custom component (input, textarea, CustomInput)
+- [ ] Implement `toHiragana` input
+- [ ] Implement `toKatakana` input
+- [ ] Implement `toRomaji` input
+
 ## To use in a form
 
 ```jsx
