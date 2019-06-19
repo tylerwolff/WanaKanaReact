@@ -19,11 +19,17 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
+  "dependencies": {
+    "wanakana": "^4.0.2"
+  },
   "peerDependencies": {
     "react": "^16.8.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
     "@storybook/addon-actions": "^5.1.8",
     "@storybook/addon-links": "^5.1.8",
     "@storybook/addons": "^5.1.8",
@@ -40,8 +46,5 @@
   "author": "Tyler Wolff <tylerwolff@gmail.com> (https://github.com/tylerwolff)",
   "license": "MIT",
   "repository": "github:tylerwolff/WanaKanaReact",
-  "homepage": "https://github.com/tylerwolff/WanaKanaReact",
-  "dependencies": {
-    "wanakana": "^4.0.2"
-  }
+  "homepage": "https://github.com/tylerwolff/WanaKanaReact"
 }
