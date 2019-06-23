@@ -1,18 +1,28 @@
 import React, { useState, useRef } from 'react';
-import { toKana } from 'wanakana';
+import { toKana, toRomaji, toHiragana, toKatakana } from 'wanakana';
 
 // Need IMEMode option to handle single kana characters like ん and い
-function romajiToKana(string) {
-  return toKana(string, { IMEMode: true });
+function translateValue(string, type) {
+  switch (type) {
+    case 'romaji':
+      return toRomaji(string, { IMEMode: true });
+    case 'hiragana':
+      return toHiragana(string, { IMEMode: true });
+    case 'katakana':
+      return toKatakana(string, { IMEMode: true });
+    case 'kana':
+    default:
+      return toKana(string, { IMEMode: true });
+  }
 }
 
-const FieldToKana = ({ component, value, onChange, ...props }) => {
+const FieldToKana = ({ component, value, to, onChange, ...props }) => {
   const inputRef = useRef(null);
-  const [parsedValue, setValue] = useState(romajiToKana(value));
+  const [parsedValue, setValue] = useState(translateValue(value, to));
   const handleChange = e => {
-    const kana = romajiToKana(e.target.value);
-    setValue(kana);
-    inputRef.current.value = kana;
+    const updatedValue = translateValue(e.target.value, to);
+    setValue(updatedValue);
+    inputRef.current.value = updatedValue;
     onChange(e);
   };
 
@@ -28,6 +38,7 @@ FieldToKana.defaultProps = {
   component: 'input',
   type: 'text',
   value: '',
+  to: 'kana',
   onChange: e => e,
 };
 
