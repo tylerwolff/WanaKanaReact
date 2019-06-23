@@ -1,6 +1,6 @@
 {
   "name": "react-wanakana",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A React wrapper for WanaKana.js",
   "keywords": [
     "react",

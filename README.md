@@ -12,10 +12,23 @@ Example demo: https://wanakanareact.netlify.com
 
 ## To do
 
-- [ ] Add ability to use a custom component (input, textarea, CustomInput)
-- [ ] Implement `toHiragana` input
-- [ ] Implement `toKatakana` input
-- [ ] Implement `toRomaji` input
+- [ ] Add ability to use a custom component
+
+## Different options
+
+```jsx
+// default - romaji to kana
+<WanakanaInput value="konnnichiwa" />
+
+// kana to romaji
+<WanakanaInput to="romaji" value="こんにちわ" />
+
+// romaji to hiragana
+<WanakanaInput to="hiragana" value="konnnichiwa" />
+
+// romaji to katakana
+<WanakanaInput to="katakana" value="TABERU" />
+```
 
 ## To use in a form
 
