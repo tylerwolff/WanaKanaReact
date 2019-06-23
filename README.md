@@ -2,11 +2,13 @@
 
 [![npm package][npm-badge]][npm]
 
-React wrapper for WanaKana.js
+React wrapper for [WanaKana.js](https://wanakana.com/)
 
 ## Currently available
 
 `RomajiInput` - uses `toKana` behind the scenes to update an input's value from romaji to hiragana/katakana
+
+Example demo: https://wanakanareact.netlify.com
 
 ## To do
 
