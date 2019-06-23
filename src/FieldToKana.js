@@ -6,7 +6,7 @@ function romajiToKana(string) {
   return toKana(string, { IMEMode: true });
 }
 
-const FieldToKana = ({ component, value, onChange, children, ...props }) => {
+const FieldToKana = ({ component, value, onChange, ...props }) => {
   const inputRef = useRef(null);
   const [parsedValue, setValue] = useState(romajiToKana(value));
   const handleChange = e => {
@@ -16,11 +16,12 @@ const FieldToKana = ({ component, value, onChange, children, ...props }) => {
     onChange(e);
   };
 
-  return React.createElement(
-    component,
-    { ref: inputRef, value: parsedValue, onChange: handleChange, ...props },
-    children
-  );
+  return React.createElement(component, {
+    ref: inputRef,
+    value: parsedValue,
+    onChange: handleChange,
+    ...props,
+  });
 };
 
 FieldToKana.defaultProps = {

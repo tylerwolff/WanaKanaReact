@@ -25,14 +25,49 @@ const RomajiForm = () => {
   );
 };
 
+class CustomInput extends React.Component {
+  render() {
+    return (
+      <input
+        type="email"
+        style={{
+          fontSize: '1.5em',
+          padding: '0.25em 0.5em',
+          border: '2px solid #bae',
+          borderRadius: '8px',
+        }}
+        {...this.props}
+      />
+    );
+  }
+}
+
 storiesOf('FieldToKana', module)
   .add('default uncontrolled', () => (
-    <FieldToKana onChange={e => console.log(e.target.value)} />
+    <FieldToKana
+      onChange={e => console.log(e.target.value)}
+      placeholder="type romaji"
+    />
   ))
   .add('with initial value', () => (
     <FieldToKana
       value="konnnichiwa"
       onChange={e => console.log(e.target.value)}
+      placeholder="type romaji"
+    />
+  ))
+  .add('as a textarea', () => (
+    <FieldToKana
+      component="textarea"
+      onChange={e => console.log(e.target.value)}
+      placeholder="type romaji"
+    />
+  ))
+  .add('as custom component', () => (
+    <FieldToKana
+      component={CustomInput}
+      onChange={e => console.log(e.target.value)}
+      placeholder="type something"
     />
   ))
   .add('controlled in form', () => <RomajiForm />);
