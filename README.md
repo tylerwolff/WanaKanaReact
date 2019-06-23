@@ -33,9 +33,9 @@ Example demo: https://wanakanareact.netlify.com
 ## To use in a form
 
 ```jsx
-import RomajiForm from 'react-wanakana';
+import WanakanaInput from 'react-wanakana';
 
-const RomajiForm = () => {
+const WanakanaInput = () => {
   const [greeting, setGreeting] = useState('こんにちわ');
   const handleChange = e => {
     setGreeting(e.target.value);
@@ -48,7 +48,7 @@ const RomajiForm = () => {
         alert(greeting);
       }}
     >
-      <RomajiInput name="greeting" value={greeting} onChange={handleChange} />
+      <WanakanaInput name="greeting" value={greeting} onChange={handleChange} />
       <button type="submit">Submit</button>
     </form>
   );
