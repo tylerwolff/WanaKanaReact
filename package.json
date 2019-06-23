@@ -16,6 +16,7 @@
     "build": "babel index.js -d dist",
     "prepublishOnly": "npm run build",
     "test": "jest",
+    "start": "npm run storybook",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
