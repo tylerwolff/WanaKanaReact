@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
-import RomajiInput from '../index';
+import { FieldToKana } from '../src';
 
 const RomajiForm = () => {
   const [greeting, setGreeting] = useState('こんにちわ');
@@ -19,18 +19,18 @@ const RomajiForm = () => {
         alert(greeting);
       }}
     >
-      <RomajiInput name="greeting" value={greeting} onChange={handleChange} />
+      <FieldToKana name="greeting" value={greeting} onChange={handleChange} />
       <button type="submit">Submit</button>
     </form>
   );
 };
 
-storiesOf('RomajiInput', module)
+storiesOf('FieldToKana', module)
   .add('default uncontrolled', () => (
-    <RomajiInput onChange={e => console.log(e.target.value)} />
+    <FieldToKana onChange={e => console.log(e.target.value)} />
   ))
   .add('with initial value', () => (
-    <RomajiInput
+    <FieldToKana
       value="konnnichiwa"
       onChange={e => console.log(e.target.value)}
     />

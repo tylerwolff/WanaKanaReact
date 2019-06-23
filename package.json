@@ -13,7 +13,7 @@
   },
   "main": "dist/index.js",
   "scripts": {
-    "build": "babel index.js -d dist",
+    "build": "babel src/index.js -d dist",
     "prepublishOnly": "npm run build",
     "test": "jest",
     "start": "npm run storybook",
