@@ -4,11 +4,9 @@
 
 React wrapper for [WanaKana.js](https://wanakana.com/)
 
-## Currently available
+## Example demo
 
-`RomajiInput` - uses `toKana` behind the scenes to update an input's value from romaji to hiragana/katakana
-
-Example demo: https://wanakanareact.netlify.com
+https://wanakanareact.netlify.com
 
 ## To do
 
@@ -29,6 +27,12 @@ Example demo: https://wanakanareact.netlify.com
 // romaji to katakana
 <WanakanaInput to="katakana" value="TABERU" />
 ```
+
+### Useful props
+| Name | Value |
+| --- | --- |
+| **to** | `kana` (default), `romaji`, `hiragana`, `katakana` |
+| **component** | any valid dom element (`input`, `textarea`, etc) |
 
 ## To use in a form
 
