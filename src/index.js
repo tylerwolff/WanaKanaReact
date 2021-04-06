@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { toKana, toRomaji, toHiragana, toKatakana } from 'wanakana';
 
 // Need IMEMode option to handle single kana characters like ん and い
@@ -25,6 +25,11 @@ const WanakanaInput = ({ component, value, to, onChange, ...props }) => {
     inputRef.current.value = updatedValue;
     onChange(e);
   };
+
+  useEffect(() => {
+      setValue(translateValue(value, to))
+  }, [value])
+
 
   return React.createElement(component, {
     ref: inputRef,
